@@ -42,11 +42,11 @@ public class PessoaController {
         return pessoaRepository.save(p);
     }
 
-    @GetMapping("api/testes/{id}")
-    @ResponseBody()
-    public Optional<PessoaModel> getbyid(@PathVariable(value = "id")Long id){
-        return pessoaRepository.findById(id);
-    }
+   @GetMapping("api/testes/{id}")
+   @ResponseBody()
+   public Optional<PessoaModel> getbyid(@PathVariable(value = "id")Long id){
+       return pessoaRepository.findById(id);
+   }
 
     
 }
