@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PrimeirocrudApplication<primeirocrud>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.angularcrud.primeirocrud.PrimeirocrudApplication",
+            "projectName": "primeirocrud",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
