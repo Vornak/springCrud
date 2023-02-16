@@ -44,7 +44,7 @@ public class PessoaController {
 
    @GetMapping("api/testes/{id}")
    @ResponseBody()
-   public Optional<PessoaModel> getbyid(@PathVariable(value = "id")Long id){
+   public Optional<PessoaModel> getById(@PathVariable(value = "id")Long id){
        return pessoaRepository.findById(id);
    }
 
