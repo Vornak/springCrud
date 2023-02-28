@@ -3,8 +3,10 @@ package com.angularcrud.primeirocrud.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,6 +48,14 @@ public class PessoaController {
    @ResponseBody()
    public Optional<PessoaModel> getById(@PathVariable(value = "id")Long id){
        return pessoaRepository.findById(id);
+   }
+
+
+   @DeleteMapping("api/testes/{id}")
+   @ResponseBody()
+   public void remove(@PathVariable Long id) {
+        pessoaRepository.deleteById(id);
+
    }
 
     
