@@ -1,15 +1,16 @@
 package com.angularcrud.primeirocrud.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,8 +25,8 @@ import com.angularcrud.primeirocrud.repository.PessoaRepository;
 @RequestMapping("api/testes")
 @Component
 @CrossOrigin("http://localhost:4200")
-public class PessoaController {
 
+public class PessoaController {
    
     private final PessoaRepository pessoaRepository;
 
@@ -44,19 +45,27 @@ public class PessoaController {
         return pessoaRepository.save(p);
     }
 
-   @GetMapping("api/testes/{id}")
+   @GetMapping("/{id}")
    @ResponseBody()
-   public Optional<PessoaModel> getById(@PathVariable(value = "id")Long id){
+   public Optional<PessoaModel> getById(@PathVariable Long id){
        return pessoaRepository.findById(id);
    }
 
 
-   @DeleteMapping("api/testes/{id}")
+   @DeleteMapping("/{id}")
    @ResponseBody()
    public void remove(@PathVariable Long id) {
         pessoaRepository.deleteById(id);
+   }
+
+   @PutMapping("/{id}")
+   public void update(@PathVariable Long id, PessoaModel body){
+    Optional<PessoaModel> userData = pessoaRepository.findById(id);
+        
+        
 
    }
+
 
     
 }

@@ -31,6 +31,9 @@ public class PessoaModel {
    @Column(name = "naturalidade", length = 100, nullable = true)
     private String naturalidade;
 
+    @Column(name = "genero", length = 16, nullable = true)
+    private String genero;
+
 
 
 
@@ -38,9 +41,9 @@ public class PessoaModel {
     return naturalidade;
 }
 
-public void setNaturalidade(String naturalidade) {
-    this.naturalidade = naturalidade;
-}
+    public void setNaturalidade(String naturalidade) {
+        this.naturalidade = naturalidade;
+    }
 
     public String getNascimento() {
         return nascimento;
@@ -49,11 +52,6 @@ public void setNaturalidade(String naturalidade) {
     public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
-
-    @Column(name = "genero", length = 16, nullable = true)
-    private String genero;
-
-
 
     public String getIdade() {
         return idade;
